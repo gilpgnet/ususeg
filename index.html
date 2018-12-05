@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ususeg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Color de la barra de navegación de Chrome. -->
+    <meta name="theme-color" content="#3F51B5">
+    
+    <!-- Configuración de la Web App Chrome y Microsoft Store. -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Configuración para del acceso directo en Windows Edge/IE -->
+    <!-- Icono -->
+    <meta name="msapplication-TileImage" content="img/ususeg_2048.png">
+    <!-- Color de tile. -->
+    <meta name="msapplication-TileColor" content="#BDBDBD">
+
+    <!-- Configuración para Web Clip en Safari. -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="img/ususeg_2048.png">
+    <link rel="apple-touch-startup-image" sizes="2048x2048"
+          href="img/ususeg_2048.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script src=
+"https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js">
+    </script>
+    <script type="module" src="js/cmp/boton-visibilidad.js"></script>
+    <script type="module" src="js/cmp/form-navegacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body class="vista">
+    <form-navegacion></form-navegacion>
+    <header>
+      <h1>Ususeg</h1>
+    </header>
+    <main role="main">
+      <p><output id="sesionCue"></output></p>
+      <p id="campoTerminaSesion">
+        <input type="button" id="terminaSesion" accesskey="T"
+               value="Terminar Sesión">
+      </p>
+      <form name="inicioDeSesion" action="javascript:;">
+        <p>
+          Los datos son proporcionados por el administrador de este sitio.
+          No introduzcas datos de ningún otro sitio.
+        </p>
+        <p>
+          <label accesskey="U">
+            Cue
+            <input name="cue" type="text" required>
+          </label>
+        </p>
+        <p>
+          <label accesskey="M">
+            Match
+            <span class="match">
+              <input name="match" type="password">
+              <boton-visibilidad></boton-visibilidad>
+            </span>
+          </label>
+        </p>
+        <p>
+          <input type="submit" accesskey="I" value="Iniciar Sesión">
+        </p>
+      </form>
+    </main>
+    <script type="module" src="js/ctrlSesion.js"></script>
+  </body>
+</html>

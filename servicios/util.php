@@ -6,11 +6,6 @@ function verifica_roles($roles) {
     throw new Exception("No tienes permiso para acceder.");
   }
 }
-function valida($condicion, $mensaje) {
-  if (!$condicion) {
-    throw new Exception($mensaje);
-  }
-}
 function atrapa_error($respuesta, $e) {
   $respuesta->error = $e->getMessage();
 }

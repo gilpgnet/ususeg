@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="module" src="js/cmp/form-navegacion.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+  </head>
+  <body>
+    <form name="vista">
+      <form-navegacion></form-navegacion>
+      <header>
+        <h1>Iniciar Sesión</h1>
+      </header>
+      <main role="main">
+        <p>
+          Los datos son proporcionados por el administrador de este sitio.
+          No introduzcas datos de ningún otro sitio.
+        </p>
+        <p>
+          <label accesskey="U">
+            Cue
+            <input name="cue" type="text" required>
+          </label>
+        </p>
+        <p>
+          <label accesskey="M">
+            Match
+            <span class="match">
+              <input name="match" type="password">
+              <boton-visibilidad></boton-visibilidad>
+            </span>
+          </label>
+        </p>
+        <p>
+          <input type="submit" accesskey="I" value="Iniciar Sesión">
+        </p>
+      </main>
+    </form>
+    <script type="module" src="js/ctrlInicia.js"></script>
+  </body>
+</html>

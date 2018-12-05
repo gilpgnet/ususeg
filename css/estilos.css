@@ -1,9 +1,19 @@
 /*  */
 body, input, a {font-family: sans-serif}
 body {margin: 0}
+form-navegacion {
+  display: block;
+  padding: 0.5em;
+  text-align: right
+}
+form-navegacion * {vertical-align: middle;}
+form-navegacion, form-navegacion * {
+  background-color: #1A237E;
+  color: white
+}
 header {
   text-align: center;
-  /* Evita que los márgenes colapsen. */
+  /* Evita que los márgenes colapsen en el borde. */
   overflow: auto
 }
 header, header * {
@@ -21,8 +31,6 @@ main {
   max-width: 600px;
   margin: 0 auto;
 }
-herramientas-detalle, campos-usuario, lista-basica {display: block}
-p, lista-basica, herramientas-detalle {margin: 1em}
 p {margin: 1em}
 p img {max-width: 100%}
 lista-basica.cargando::before {
@@ -58,7 +66,8 @@ label {
 }
 label > * {
   display: block;
-  width: 100%
+  width: 100%;
+  color: black
 }
 label > .match {display: flex}
 .match > *:first-child {flex-grow: 1}

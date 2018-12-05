@@ -1,9 +1,26 @@
+import { query, muestraError } from "../lib/util";
 customElements.define("form-navegacion", class extends HTMLElement {
-  connectedCallback() {
-    this.innerHTML =
-        `<ul>
-          <li><a href="index.html">Sesión</a></li>
-          <li id="navUsuarios"><a href="usuarios.html">Usuarios</a></li>
-        </ul>`;
+  async connectedCallback() {
+    try {
+      this.textContent = "Cargando información de sesión…";
+      const respuesta = await query("servicios/sesion_busca.php?XDEBUG_SESSION_START=name");
+      const cue = respuesta.cue;
+      const roles = respuesta.roles;
+      let contenido = '<a href="index.html">Inicio</a>';
+      if (roles.indexOf("Cliente") >= 0) {
+        contenido += ' <a href="clientes.html">Clientes</a>';
+      }
+      if (roles.indexOf("Invitado") >= 0) {
+        contenido += ' <a href="invitados.html">Invitados</a>';
+      }
+      if (cue) {
+        contenido += ' <a href="sesion.html">Sesión</a>';
+      } else {
+        contenido += ' <a href="inicia.html">Iniciar Sesión</a>';
+      }
+      this.innerHTML = contenido;
+    } catch (e) {
+      muestraError(e);
+    }
   }
 });

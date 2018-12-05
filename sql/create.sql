@@ -5,7 +5,6 @@ GRANT ALL PRIVILEGES
   IDENTIFIED BY 'ususeg';
 FLUSH PRIVILEGES;
 USE ususeg;
-ENGINE = InnoDB;
 CREATE TABLE ROL (
   ROL_ID VARCHAR(255) PRIMARY KEY,
   ROL_DESCRIPCION VARCHAR(255) NOT NULL
@@ -15,8 +14,7 @@ CREATE TABLE USUARIO (
   USU_CUE VARCHAR(255),
   USU_MATCH VARCHAR(255) NOT NULL,
   USU_NOMBRE VARCHAR(255) NOT NULL,
-  CONSTRAINT USU_PK PRIMARY KEY (USU_CUE),
-  CONSTRAINT USU_PAS_FK FOREIGN KEY (PAS_ID) REFERENCES PASATIEMPO (PAS_ID)
+  CONSTRAINT USU_PK PRIMARY KEY (USU_CUE)
 )
 ENGINE = InnoDB;
 CREATE TABLE USUARIO_ROL (
@@ -32,6 +30,6 @@ INSERT INTO ROL (ROL_ID,ROL_DESCRIPCION) VALUES
   ('Cliente', 'Hace cosas.'),
   ('Invitado', 'No hace nada.');
 INSERT INTO USUARIO (USU_CUE,USU_NOMBRE,USU_MATCH) VALUES
-  ('admin','Cambia', SHA1('istra'), ('pepito','José', SHA1('cuentos'));
+  ('admin','Cambia', SHA1('istra')), ('pepito','José', SHA1('cuentos'));
 INSERT INTO USUARIO_ROL (USU_CUE,ROL_ID) VALUES
-  ('admin', 'Administrador'), ('pepito', 'Cliente'), ('pepito', 'Invitado');
+  ('admin', 'Administrador'), ('admin', 'Cliente'), ('pepito', 'Cliente'), ('pepito', 'Invitado');

@@ -1,5 +1,5 @@
 <?php
-function verifica_roles($roles) {
+function protege($roles) {
   session_start();
   if (count($roles) > 0 && (!isset($_SESSION["roles"])
       || count(array_intersect($roles, $_SESSION["roles"])) === 0)) {

@@ -16,9 +16,7 @@ async function carga() {
   }
 }
 async function terminaSesion(evt) {
-  evt.preventDefault();
   try {
-    evt.preventDefault();
     await execute("servicios/sesion_termina.php?XDEBUG_SESSION_START=name", vista, "index.html");
   } catch (e) {
     muestraError(e);
